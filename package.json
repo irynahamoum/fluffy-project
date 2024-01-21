@@ -1,0 +1,14 @@
+{
+  "name": "sunday-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npx parcel src/*.html",
+    "build": "npx parcel build src/index.html",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
+}
