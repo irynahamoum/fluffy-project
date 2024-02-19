@@ -1,0 +1,214 @@
+body {
+  background-color: lightgrey;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* animation-name: animatedbackground;
+  animation-duration: infinite; */
+  animation: animatedbackground 5s linear 2s infinite alternate;
+  /* animation-timing-function: ease-in; */
+}
+
+@keyframes animatedbackground {
+  0% {
+    background-color: rgb(69, 180, 254);
+  }
+  25% {
+    background-color: rgb(131, 146, 255);
+  }
+  50% {
+    background-color: rgb(231, 162, 250);
+  }
+  100% {
+    background-color: rgb(163, 244, 248);
+  }
+}
+/* ============================================================== */
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.form > #search {
+  cursor: pointer;
+  width: 272px;
+  border-radius: 6px;
+  margin-right: 8px;
+  border: 1px solid rgba(128, 128, 128, 0.62);
+  padding: 8px 12px;
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.04em;
+  color: rgb(134, 132, 132);
+  transition: border-color 250ms linear;
+}
+
+.form > #search:focus-visible {
+  /* border-color: #ef7afc; */
+  box-shadow: 0.2px 0.2px 0.2px rgba(0, 0, 0, 0.832),
+    0 0 20px rgba(0, 0, 255, 0.849), 0 0 3px rgba(0, 0, 139, 0.825);
+  outline: rgb(229, 156, 249);
+}
+
+.form > button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  background: #4e74ffb6;
+  color: white;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0), 0 0 25px rgb(0, 0, 255),
+    0 0 5px rgb(0, 0, 139);
+  border: 1px solid rgba(128, 128, 128, 0.432);
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.04em;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form > button:hover,
+.form > button:focus {
+  background: #6c8cff;
+  box-shadow: 0.2px 0.2px 0.2px rgba(0, 0, 0, 0.908),
+    0 0 20px rgba(0, 0, 255, 0.932), 0 0 3px rgba(0, 0, 139, 0.945);
+}
+
+/* ================================================================== */
+.loader {
+  width: 88px;
+  height: 88px;
+  display: none;
+  position: fixed;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+  margin-top: 50px;
+}
+
+.loader::after,
+.loader::before {
+  content: "";
+  width: 88px;
+  height: 88px;
+  border: 4px solid #71d1f7;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  animation: rotation 2s ease-in-out infinite;
+}
+.loader::after {
+  border-color: #f780e3;
+  animation-delay: 1s;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================================================================================ */
+
+.images-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.gallery-grid {
+  display: grid;
+  width: 100%;
+  margin-top: 0;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(5, calc((100% - 100px) / 5));
+  grid-template-rows: repeat(calc((100% - 130px) / 3));
+  row-gap: 15px;
+  column-gap: 20px;
+}
+
+.gallery-card {
+  cursor: pointer;
+  /* width: 100%;
+  height: 100%; */
+}
+
+a > img {
+  border-radius: 5px;
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+  /* display: block; */
+}
+
+.img-details-box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.detail-item {
+  font-size: 12px;
+  font-weight: 200;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  color: #2e2f42;
+}
+
+/* =================================================================== */
+
+.load-more-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  background: #4e74ffb4;
+  color: white;
+  text-shadow: 1px 1px 1px black, 0 0 25px blue, 0 0 5px darkblue;
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.04em;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.load-more-btn:hover,
+.load-more-btn:focus {
+  background: #6c8cff;
+  box-shadow: 0.2px 0.2px 0.2px rgba(0, 0, 0, 0.887),
+    0 0 20px rgba(0, 0, 255, 0.894), 0 0 3px rgba(0, 0, 139, 0.887);
+}
+
+.hidden {
+  display: none;
+}

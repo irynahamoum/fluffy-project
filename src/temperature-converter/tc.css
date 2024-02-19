@@ -1,0 +1,96 @@
+body {
+  font-family: "Raleway", sans-serif;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+body::before {
+  content: "";
+  /* display: block; */
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url("./javea.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  margin-right: 160px;
+  display: flex;
+  flex-direction: column;
+  width: 440px;
+  /* gap: 6px; */
+}
+
+.title {
+  color: white;
+  align-self: center;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0), 0 0 25px rgb(0, 0, 255),
+    0 0 7px rgb(250, 111, 245);
+  font-family: Raleway;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2; /* 150% */
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+.input {
+  border-radius: 8px;
+  height: 40px;
+  border: none;
+  color: rgb(62, 98, 190);
+  box-shadow: 1px 1px rgb(0, 0, 0), 0 0 5px rgb(0, 0, 255),
+    0 0 8px rgba(105, 203, 246, 0.688);
+  margin-bottom: 8px;
+  padding-left: 8px;
+}
+
+::placeholder {
+  color: rgb(68, 94, 160);
+  opacity: 1; /* Firefox */
+}
+
+.input:focus-visible {
+  /* border: 1.5px solid rgb(91, 91, 252); */
+  box-shadow: 0.2px 0.2px 0.2px rgba(0, 0, 0, 0.832), 0 0 3px rgb(60, 15, 219),
+    0 0 20px rgba(0, 0, 255, 0.849),
+    inset 5px 5px 10px rgba(252, 179, 250, 0.935);
+  outline: rgb(170, 156, 249);
+}
+
+.buttons {
+  display: inline-flex;
+  gap: 2px;
+  margin: 0 auto;
+}
+
+.button {
+  border-radius: 8px;
+  height: 40px;
+  width: 199px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.545);
+  box-shadow: 1px 1px rgb(0, 0, 0), 0 0 5px rgb(0, 0, 255),
+    0 0 8px rgba(105, 203, 246, 0.688);
+  color: white;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0), 0 0 25px rgb(0, 0, 255),
+    0 0 7px rgb(250, 111, 245);
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2; /* 150% */
+  letter-spacing: 0.03em;
+}
+
+.button:hover,
+.button:focus {
+  background: rgb(248, 189, 246);
+  box-shadow: 0.2px 0.2px 0.2px rgba(0, 0, 0, 0.908),
+    0 0 20px rgba(0, 0, 255, 0.932), 0 0 3px rgba(0, 0, 139, 0.945);
+}
